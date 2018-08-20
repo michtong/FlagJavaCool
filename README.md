@@ -1,0 +1,2 @@
+# FlagJavaCool
+Cool Java Flag
