@@ -131,18 +131,36 @@ public class Flag extends JApplet {
 	public void drawOneStar(Graphics g, int x, int y) {
 		g.setColor(Color.white);
 //		System.out.println("1");
-		g.fillRect(x,y,(int) (K*FlagHeight/2), (int)(K*FlagHeight/2));
+actuallDrawStar(g,x,y);
+		//int [] z = {1,20,34,44};
+		//int [] c = {14,25,63,74};
+		
+		//g.fillPolygon(z, c, 4);
+		//g.fillRect(x,y,(int) (K*FlagHeight/2), (int)(K*FlagHeight/2));
 	}
 	
 	public void actuallDrawStar(Graphics g, int x, int y) {
 		double h = Math.sin(Math.toRadians(18))*R;
 		double r = h/Math.sin(Math.toRadians(54));
+		double j = Math.sin(Math.toRadians(198))*r;
+		double k = Math.sin(Math.toRadians(234))*R;
 		Point p1 = new Point((int)(Math.sqrt((R*R)-(h*h))), (int)(h));
 		Point p2 = new Point((int)(Math.sqrt(r*r-(h*h))), (int)(h));
 		Point p3 = new Point(0, (int)R);
 		Point p4 = new Point((int)(-(Math.sqrt(r*r-(h*h)))), (int)(h));
 		Point p5 = new Point((int)-((Math.sqrt((R*R)-(h*h)))), (int)(h));
-		Point p6 = new Point
+		Point p6 = new Point ((int) -((Math.sqrt((r*r)-(j*j)))), (int) j);
+		Point p7 = new Point ((int) -(Math.sqrt(((R*R)-k*k))),(int) k);
+		Point p8 = new Point (0,(int)-r);
+		Point p9 = new Point ((int) -(Math.sqrt(((R*R)-k*k))),(int) k);
+		Point p10 = new Point ((int) ((Math.sqrt((r*r)-(j*j)))), (int) j);
+		
+		int[] xPoints = {p1.x,p2.x,p3.x,p4.x,p5.x,p6.x,p7.x,p8.x,p9.x,p10.x};
+		int[] yPoints = {p1.y,p2.y,p3.y,p4.y,p5.y,p6.y,p7.y,p8.y,p9.y,p10.y};
+		g.setColor(Color.WHITE);
+		g.fillPolygon(xPoints, yPoints, 10);
+		
+	
 	}
 	
 	
